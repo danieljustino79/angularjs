@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>AngularJS</h1>
+<p>ng-app, ng-model, ng-bind</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+&lt;body&gt;
+
+&lt;div ng-app=""&gt;
+  &lt;p&gt;Name: &lt;input type="text" ng-model="name"&gt;&lt;/p&gt;
+  &lt;p ng-bind="name"&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>   
+<p>Exemplos</p>
+<pre>&lt;div ng-app="" ng-init="nome='Sam'"&gt;
+ &lt;p&gt;O nome é &lt;span ng-bind="nome"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;input type="text" ng-model="{{descricao}}" &gt;
+&lt;p&gt;A descrição é &lt;span ng-bind="descricao"&gt;&lt;/span&gt;&lt;/p&gt;
+ 
+&lt;p&gt;Ou uma expressão: { { 5 + 5 }}&lt;/p&gt;</pre>
+
+<p>Controller</p>
+<pre>&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+
+&lt;input type="text" ng-model="nome"&gt; - 
+&lt;input type="text" ng-model="sobreNome"&gt;
+Nome Completo: {{firstName + " " + lastName}}
+
+&lt;/div&gt;
+
+&lt;script&gt;
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nome= "Sam";
+    $scope.sobreNome= "Jeih";
+});
+&lt;/script&gt;</pre>
+<div ng-controller="myCtrl">
+
+Teste os campos <input type="text" ng-model="nome"> - 
+<input type="text" ng-model="sobreNome">
+Nome Completo: {{nome + " " + sobreNome}}
+
+</div>
+<hr>
+<p>objeto e array</p>
+<pre>&lt;div ng-init="objeto={nome:'Sam',sobreNome:'Jeih'}" &gt;
+ &lt;p ng-bind="objeto.nome"&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div ng-app="" ng-init="lista=[1,15,19,2,40]"&gt;
+ &lt;p&gt;Número na 3º posição { { lista[2] }}&lt;/p&gt;
+ &lt;p ng-bind="lista[2]"&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+<div ng-init="objeto={nome:'Sam',sobreNome:'Jeih'}" >
+ <p ng-bind="objeto.nome"></p>
+</div>
+
+<div ng-app="" ng-init="points=[1,15,19,2,40]">
+ <p>Número na 3º posição {{ points[2] }}</p>
+ <p ng-bind="points[2]"></p>
+</div>
+
+    </div><!--fim-->
+  </div>
+</div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nome= "Sam";
+    $scope.sobreNome= "Jeih";
+});
+        </script>
+</html>
